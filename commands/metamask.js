@@ -173,6 +173,12 @@ module.exports = {
     if (secretWords === undefined && process.env.SECRET_WORDS) {
       secretWords = process.env.SECRET_WORDS;
     }
+    if (network === undefined && process.env.NETWORK) {
+      network = process.env.NETWORK;
+    }
+    if (password === undefined && process.env.PASSWORD) {
+      password = process.env.PASSWORD;
+    }
     await puppeteer.init();
     await puppeteer.assignWindows();
     await puppeteer.metamaskWindow().waitForTimeout(1000);

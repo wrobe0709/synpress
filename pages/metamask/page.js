@@ -4,4 +4,6 @@ const pageElements = {
   loadingSpinner,
 };
 
-module.exports = pageElements;
+module.exports = {
+  pageElements
+}
