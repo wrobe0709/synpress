@@ -56,12 +56,12 @@ Cypress.Commands.add('confirmMetamaskWelcomePage', () => {
 
 Cypress.Commands.add(
   'importMetamaskWallet',
-  (secretWords = process.env.SECRET_WORDS, password = 'Tester@1234') => {
+  (secretWords = process.env.SECRET_WORDS, password = process.env.PASSWORD) => {
     return cy.task('importMetamaskWallet', { secretWords, password });
   },
 );
 
-Cypress.Commands.add('changeMetamaskNetwork', (network = 'kovan') => {
+Cypress.Commands.add('changeMetamaskNetwork', (network = process.env.NETWORK) => {
   return cy.task('changeMetamaskNetwork', network);
 });
 
@@ -107,7 +107,7 @@ Cypress.Commands.add('fetchMetamaskWalletAddress', () => {
 
 Cypress.Commands.add(
   'setupMetamask',
-  (secretWords, network = 'kovan', password = 'Tester@1234') => {
+  (secretWords, network, password) => {
     return cy.task('setupMetamask', { secretWords, network, password });
   },
 );

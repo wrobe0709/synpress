@@ -29,6 +29,10 @@ module.exports = {
       networkName = 'goerli';
       networkId = 5;
       isTestnet = true;
+    } else if (network === 'localhost') {
+      networkName = 'localhost';
+      networkId = 6;
+      isTestnet = true;
     }
   },
   getNetwork: () => {
